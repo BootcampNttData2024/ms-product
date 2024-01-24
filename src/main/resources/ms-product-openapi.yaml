@@ -1,0 +1,410 @@
+openapi: '3.0.2'
+info:
+  title: Microservice Product - OpenAPI 3.0
+  version: '1.0'
+  description: |- 
+    La presente especificación contiene los endpoints del microservicio Product
+    y esta basado en la especificación OpenAPI 3.0.  
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: alcibarvasquez@gmail.com
+servers:
+  - url: http://localhost:8094
+
+tags:
+  - name: Product
+    description: product
+  - name: ProductType
+    description: product type
+  - name: ProductBusinessRule
+    description: product type
+
+paths:  
+  /product:
+    post:
+      tags:
+        - Product
+      operationId: addProduct
+      description: 'POST'
+      requestBody:        
+        $ref: '#/components/requestBodies/ProductRequest'
+      responses:
+        '200':
+          description: 'response product post'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'      
+    get:
+      tags:
+        - Product
+      operationId: getAllProducts
+      description: GETALL
+      responses:
+        '200':
+          description: 'response get all clients'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductResponse'
+  /product/{productId}:
+    put:
+      tags:
+        - Product
+      operationId: updateProduct
+      description: 'PUT'
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        $ref: '#/components/requestBodies/ProductRequest'
+      responses:
+        '200':
+          description: 'response product put'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'                
+    get:
+      tags:
+        - Product
+      operationId: getProductById
+      description: GET
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'response get product by id'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+    delete:
+      tags:
+        - Product
+      operationId: deleteProductById
+      description: 'DELETE'
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: delete product by id          
+  /product-type:
+    post:
+      tags:
+        - ProductType
+      operationId: addProductType
+      description: 'POST'
+      requestBody:
+        $ref: '#/components/requestBodies/ProductTypeRequest'
+      responses:
+        '200':
+          description: 'response product type post'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductTypeResponse'
+    get:
+      tags:
+        - ProductType
+      operationId: getAllProductType
+      description: GETALL
+      responses:
+        '200':
+          description: 'response get all product type'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductTypeResponse'
+  /product-type/{productTypeId}:
+    put:
+      tags:
+        - ProductType
+      operationId: updateProductType
+      description: 'PUT'
+      parameters:
+        - in: path
+          name: productTypeId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        $ref: '#/components/requestBodies/ProductTypeRequest'
+      responses:
+        '200':
+          description: 'response product type put'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductTypeResponse'
+    get:
+      tags:
+        - ProductType
+      operationId: getProductTypeById
+      description: GET
+      parameters:
+        - in: path
+          name: productTypeId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'response get product type by id'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductTypeResponse'
+    delete:
+      tags:
+        - ProductType
+      operationId: deleteProductTypeById
+      description: 'DELETE'
+      parameters:
+        - in: path
+          name: productTypeId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: delete product type by id
+  /product-business-rule:
+    post:
+      tags:
+        - ProductBusinessRule
+      operationId: addProductBusinessRule
+      description: 'POST'
+      requestBody:
+        $ref: '#/components/requestBodies/ProductBusinessRuleRequest'
+      responses:
+        '200':
+          description: 'response product business rule post'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductBusinessRuleResponse'      
+    get:
+      tags:
+        - ProductBusinessRule
+      operationId: getAllProductBusinessRule
+      description: GETALL
+      responses:
+        '200':
+          description: 'response get all product business rule'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductBusinessRuleResponse'
+  /product-business-rule/{productBusinessRuleId}:
+    put:
+      tags:
+        - ProductBusinessRule
+      operationId: updateProductBusinessRule
+      description: 'PUT'
+      parameters:
+        - in: path
+          name: productBusinessRuleId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        $ref: '#/components/requestBodies/ProductBusinessRuleRequest'
+      responses:
+        '200':
+          description: 'response product business rule put'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductBusinessRuleResponse'
+    get:
+      tags:
+        - ProductBusinessRule
+      operationId: getProductBusinessRuleById
+      description: GET
+      parameters:
+        - in: path
+          name: productBusinessRuleId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'response get product business rule by id'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductBusinessRuleResponse'
+    delete:
+      tags:
+        - ProductBusinessRule
+      operationId: deleteProductBusinessRuleById
+      description: 'DELETE'
+      parameters:
+        - in: path
+          name: productBusinessRuleId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: delete product business rule by id
+
+components:
+  schemas:
+    ProductRequest:
+      type: object
+      description: Product model
+      required:
+        - productTypeId
+        - name
+      properties:        
+        productTypeId:
+          type: string
+          example: 1          
+        name:
+          type: string
+          example: 'AHORRO, CC, PLAZO FIJO'  
+    ProductResponse:
+      type: object
+      description: Product model
+      properties:
+        productId:
+          type: string
+          example: 1
+        productType:
+          $ref: '#/components/schemas/ProductTypeResponse'
+        name:
+          type: string
+          example: 'AHORRO, CC, PLAZO FIJO'  
+    ProductTypeRequest:
+      type: object
+      description: Product type model
+      required:
+        - name
+      properties:        
+        name:
+          type: string
+          example: 'PASIVO, ACTIVO'
+    ProductTypeResponse:
+      type: object
+      description: Product type model      
+      properties:
+        productTypeId:
+          type: string
+          example: 1
+        name:
+          type: string
+          example: 'PASIVO, ACTIVO'
+    ProductBusinessRuleRequest:
+      type: object
+      description: Product type model
+      required:
+        - productId
+        - clientTypeId
+      properties:        
+        productId:
+          type: string
+          example: 'DNI, RUC, PASAPORTE'
+        clientTypeId:
+          type: string
+          example: '1'
+        maintenanceCommission:
+          type: number
+          format: double
+          example: 20.5
+        maxHolders:
+          type: integer
+          example: 1
+        maxSignatories:
+          type: integer
+          example: 1
+        maxMovementsPerMonth:
+          type: integer
+          example: 1
+        dayMovementsPerMonth:
+          type: string
+          example: 'LUNES'
+        maxTransactionFree:
+          type: integer
+          example: 1
+        requiredAccount:
+          type: boolean
+          example: true
+        maxQuantityProduct:
+          type: integer
+          example: 1
+    ProductBusinessRuleResponse:
+      type: object
+      description: Product type model
+      properties:
+        productBusinessRuleId:
+          type: string
+          example: '1'
+        product:
+          $ref: '#/components/schemas/ProductResponse'
+        clientTypeId:
+          type: string
+          example: '1'
+        maintenanceCommission:
+          type: number
+          format: double
+          example: 20.5
+        maxHolders:
+          type: integer
+          example: 1
+        maxSignatories:
+          type: integer
+          example: 1
+        maxMovementsPerMonth:
+          type: integer
+          example: 1
+        dayMovementsPerMonth:
+          type: string
+          example: 'LUNES'
+        maxTransactionFree:
+          type: integer
+          example: 1
+        requiredAccount:
+          type: boolean
+          example: true
+        maxQuantityProduct:
+          type: integer
+          example: 1
+
+  requestBodies:
+    ProductRequest:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ProductRequest'
+    ProductTypeRequest:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ProductTypeRequest'
+    ProductBusinessRuleRequest:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ProductBusinessRuleRequest'
