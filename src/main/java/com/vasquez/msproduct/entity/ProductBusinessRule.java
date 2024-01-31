@@ -21,30 +21,36 @@ public class ProductBusinessRule {
     private String productId;
 
     @NotNull
-    private String clientTypeId;
+    private String clientType;
 
-    @NotNull
+    private String profileType;
+
     private Double maintenanceCommission;
 
-    @NotNull
-    private Integer maxHolders;
+    private Integer minHolders;
 
-    @NotNull
-    private Integer maxSignatories;
+    private Integer minSignatories;
 
-    @NotNull
-    private Integer maxMovementsPerMonth;
+    private String maxMovementsPerMonth;
 
-    @NotNull
     private String dayMovementsPerMonth;
 
-    @NotNull
-    private Integer maxTransactionFree;
+    private String maxSavingAccounts;
 
-    @NotNull
-    private boolean requiredAccount;
+    private String maxCurrentAccounts;
 
-    @NotNull
-    private Integer maxQuantityProduct;
+    private String maxFixedTermAccounts;
+
+    private String maxCredits;
+
+    private Double minMonthlyAmount;
+
+    private boolean requiredCreditCard;
+
+    private boolean requiredCurrentAccount;
+
+    private String maxTransactionFree;
+
+    private Double commissionPerTransaction;
 
 }

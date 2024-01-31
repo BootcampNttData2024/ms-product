@@ -1,44 +1,19 @@
 package com.vasquez.msproduct.service;
 
 import com.vasquez.msproduct.entity.ProductType;
-import com.vasquez.msproduct.repository.ProductTypeRepository;
-
-import com.vasquez.msproduct.util.CrudUtil;
-import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@Service
-public class ProductTypeService implements CrudUtil<ProductType, String> {
+public interface ProductTypeService {
 
-    private final ProductTypeRepository productTypeRepository;
+    Mono<ProductType> create(ProductType request);
 
-    public ProductTypeService(ProductTypeRepository productTypeRepository) {
-        this.productTypeRepository = productTypeRepository;
-    }
+    Mono<ProductType> update(ProductType request, String productTypeId);
 
-    @Override
-    public Mono<ProductType> create(ProductType request) {
-        return productTypeRepository.save(request);
-    }
+    Mono<ProductType> findById(String productTypeId);
 
-    @Override
-    public Mono<ProductType> update(ProductType request, String id) {
-        return productTypeRepository.save(request);
-    }
+    Flux<ProductType> findAll();
 
-    @Override
-    public Mono<ProductType> findById(String id) {
-        return productTypeRepository.findById(id);
-    }
+    Mono<Void> deleteById(String productTypeId);
 
-    @Override
-    public Flux<ProductType> findAll() {
-        return productTypeRepository.findAll();
-    }
-
-    @Override
-    public Mono<Void> deleteById(String id) {
-        return productTypeRepository.deleteById(id);
-    }
 }

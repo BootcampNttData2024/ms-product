@@ -278,7 +278,7 @@ components:
       properties:        
         productTypeId:
           type: string
-          example: 1          
+          example: '1'         
         name:
           type: string
           example: 'AHORRO, CC, PLAZO FIJO'  
@@ -289,8 +289,9 @@ components:
         productId:
           type: string
           example: 1
-        productType:
-          $ref: '#/components/schemas/ProductTypeResponse'
+        productTypeId:
+          type: string
+          example: ''
         name:
           type: string
           example: 'AHORRO, CC, PLAZO FIJO'  
@@ -318,39 +319,17 @@ components:
       description: Product type model
       required:
         - productId
-        - clientTypeId
+        - clientType
       properties:        
         productId:
           type: string
-          example: 'DNI, RUC, PASAPORTE'
-        clientTypeId:
+          example: '1'        
+        clientType:
           type: string
-          example: '1'
-        maintenanceCommission:
-          type: number
-          format: double
-          example: 20.5
-        maxHolders:
-          type: integer
-          example: 1
-        maxSignatories:
-          type: integer
-          example: 1
-        maxMovementsPerMonth:
-          type: integer
-          example: 1
-        dayMovementsPerMonth:
+          example: 'PERSONAL'  
+        profileType:
           type: string
-          example: 'LUNES'
-        maxTransactionFree:
-          type: integer
-          example: 1
-        requiredAccount:
-          type: boolean
-          example: true
-        maxQuantityProduct:
-          type: integer
-          example: 1
+          example: 'VIP, PYME' 
     ProductBusinessRuleResponse:
       type: object
       description: Product type model
@@ -358,37 +337,60 @@ components:
         productBusinessRuleId:
           type: string
           example: '1'
-        product:
-          $ref: '#/components/schemas/ProductResponse'
-        clientTypeId:
+        productId:
           type: string
-          example: '1'
+          example: '1'        
+        clientType:
+          type: string
+          example: 'PERSONAL'
+        profileType:
+          type: string
+          example: 'VIP, PYME'
         maintenanceCommission:
           type: number
           format: double
-          example: 20.5
-        maxHolders:
+          example: 20.5        
+        minHolders:
           type: integer
           example: 1
-        maxSignatories:
+        minSignatories:
           type: integer
           example: 1
         maxMovementsPerMonth:
-          type: integer
-          example: 1
+          type: string
+          example: '1'
         dayMovementsPerMonth:
           type: string
-          example: 'LUNES'
-        maxTransactionFree:
-          type: integer
-          example: 1
-        requiredAccount:
+          example: 'LUNES'              
+        maxSavingAccounts:
+          type: string
+          example: ''
+        maxCurrentAccounts:
+          type: string
+          example: '1'
+        maxFixedTermAccounts:
+          type: string
+          example: '1'
+        maxCredits:
+          type: string
+          example: ''
+        minMonthlyAmount:
+          type: number
+          format: double
+          example: 0.0
+        requiredCreditCard:
           type: boolean
           example: true
-        maxQuantityProduct:
-          type: integer
-          example: 1
-
+        requiredCurrentAccount:
+          type: boolean
+          example: false
+        maxTransactionFree:
+          type: string
+          example: '1'  
+        commissionPerTransaction:
+          type: number
+          format: double
+          example: 0.0
   requestBodies:
     ProductRequest:
       required: true
