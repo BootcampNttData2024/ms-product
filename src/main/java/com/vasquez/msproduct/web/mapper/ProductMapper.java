@@ -5,18 +5,36 @@ import com.vasquez.msproduct.model.ProductRequest;
 import com.vasquez.msproduct.model.ProductResponse;
 import org.springframework.beans.BeanUtils;
 
+/**
+ * Product mapper.
+ *
+ * @author Vasquez
+ * @version 1.0.0
+ */
 public class ProductMapper {
 
-    public static Product toEntity(ProductRequest productRequest) {
-        Product product = new Product();
-        BeanUtils.copyProperties(productRequest, product);
-        return product;
-    }
+  /**
+   * To entity.
+   *
+   * @param productRequest product request
+   * @return product entity
+   */
+  public static Product toEntity(ProductRequest productRequest) {
+    Product product = new Product();
+    BeanUtils.copyProperties(productRequest, product);
+    return product;
+  }
 
-    public static ProductResponse toResponse(Product product) {
-        ProductResponse productResponse = new ProductResponse();
-        BeanUtils.copyProperties(product, productResponse);
-        return productResponse;
-    }
+  /**
+   * To response.
+   *
+   * @param product product entity
+   * @return product response
+   */
+  public static ProductResponse toResponse(Product product) {
+    ProductResponse productResponse = new ProductResponse();
+    BeanUtils.copyProperties(product, productResponse);
+    return productResponse;
+  }
 
 }

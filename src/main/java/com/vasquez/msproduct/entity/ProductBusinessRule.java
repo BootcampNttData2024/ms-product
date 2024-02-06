@@ -1,11 +1,20 @@
 package com.vasquez.msproduct.entity;
 
-import lombok.*;
+import javax.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotNull;
-
+/**
+ * Product entity.
+ *
+ * @author Vasquez
+ * @version 1.0.0
+ */
 @Data
 @Builder
 @ToString
@@ -14,43 +23,43 @@ import javax.validation.constraints.NotNull;
 @Document(collection = "product_business_rule")
 public class ProductBusinessRule {
 
-    @Id
-    private String productBusinessRuleId;
+  @Id
+  private String productBusinessRuleId;
 
-    @NotNull
-    private String productId;
+  @NotNull
+  private String productId;
 
-    @NotNull
-    private String clientType;
+  @NotNull
+  private String clientType;
 
-    private String profileType;
+  private String profileType;
 
-    private Double maintenanceCommission;
+  private Double maintenanceCommission;
 
-    private Integer minHolders;
+  private Integer minHolders;
 
-    private Integer minSignatories;
+  private Integer minSignatories;
 
-    private String maxMovementsPerMonth;
+  private String maxMovementsPerMonth;
 
-    private String dayMovementsPerMonth;
+  private String dayMovementsPerMonth;
 
-    private String maxSavingAccounts;
+  private String maxSavingAccounts;
 
-    private String maxCurrentAccounts;
+  private String maxCurrentAccounts;
 
-    private String maxFixedTermAccounts;
+  private String maxFixedTermAccounts;
 
-    private String maxCredits;
+  private String maxCredits;
 
-    private Double minMonthlyAmount;
+  private Double minMonthlyAmount;
 
-    private boolean requiredCreditCard;
+  private boolean requiredCreditCard;
 
-    private boolean requiredCurrentAccount;
+  private boolean requiredCurrentAccount;
 
-    private String maxTransactionFree;
+  private String maxTransactionFree;
 
-    private Double commissionPerTransaction;
+  private Double commissionPerTransaction;
 
 }
