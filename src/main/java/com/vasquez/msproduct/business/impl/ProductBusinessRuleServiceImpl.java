@@ -1,4 +1,4 @@
-package com.vasquez.msproduct.service.impl;
+package com.vasquez.msproduct.business.impl;
 
 import com.vasquez.msproduct.entity.Product;
 import com.vasquez.msproduct.entity.ProductBusinessRule;
@@ -6,8 +6,8 @@ import com.vasquez.msproduct.entity.enums.ClientType;
 import com.vasquez.msproduct.entity.enums.ProductType;
 import com.vasquez.msproduct.entity.enums.ProfileType;
 import com.vasquez.msproduct.repository.ProductBusinessRuleRepository;
-import com.vasquez.msproduct.service.ProductBusinessRuleService;
-import com.vasquez.msproduct.service.exception.AppException;
+import com.vasquez.msproduct.business.ProductBusinessRuleService;
+import com.vasquez.msproduct.business.exception.AppException;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

@@ -1,4 +1,4 @@
-package com.vasquez.msproduct.service.exception;
+package com.vasquez.msproduct.business.exception;
 
 import java.time.LocalDateTime;
 import lombok.Data;

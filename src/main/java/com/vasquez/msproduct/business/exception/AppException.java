@@ -1,4 +1,4 @@
-package com.vasquez.msproduct.service.exception;
+package com.vasquez.msproduct.business.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;

@@ -3,7 +3,7 @@ package com.vasquez.msproduct.web;
 import com.vasquez.msproduct.api.ProductBusinessRuleApiDelegate;
 import com.vasquez.msproduct.model.ProductBusinessRuleRequest;
 import com.vasquez.msproduct.model.ProductBusinessRuleResponse;
-import com.vasquez.msproduct.service.ProductBusinessRuleService;
+import com.vasquez.msproduct.business.ProductBusinessRuleService;
 import com.vasquez.msproduct.web.mapper.ProductBusinessRuleMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

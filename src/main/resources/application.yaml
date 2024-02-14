@@ -1,10 +1,11 @@
-server:
-  port: 8094
 spring:
-  data:
-    mongodb:
-      uri: mongodb+srv://BootcampNttdata2024:k9tUuUwOvkdqqrjE@bootcampnttdata2024.zcxsoou.mongodb.net/?retryWrites=true&w=majority
-      database: MSDBPRODUCT
-logging:
-  level:
-    root: INFO
+  application:
+    name: ms-product
+  config:
+    import: 'optional:configserver:'
+  profiles.active: dev
+  cloud:
+    config:
+      uri: http://localhost:9090
+      username: nttdata
+      password: nttdata$

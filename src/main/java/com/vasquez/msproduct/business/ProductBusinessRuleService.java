@@ -1,4 +1,4 @@
-package com.vasquez.msproduct.service;
+package com.vasquez.msproduct.business;
 
 import com.vasquez.msproduct.entity.ProductBusinessRule;
 import reactor.core.publisher.Flux;

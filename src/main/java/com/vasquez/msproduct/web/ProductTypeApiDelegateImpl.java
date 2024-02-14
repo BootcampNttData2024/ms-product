@@ -3,7 +3,7 @@ package com.vasquez.msproduct.web;
 import com.vasquez.msproduct.api.ProductTypeApiDelegate;
 import com.vasquez.msproduct.model.ProductTypeRequest;
 import com.vasquez.msproduct.model.ProductTypeResponse;
-import com.vasquez.msproduct.service.ProductTypeService;
+import com.vasquez.msproduct.business.ProductTypeService;
 import com.vasquez.msproduct.web.mapper.ProductTypeMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

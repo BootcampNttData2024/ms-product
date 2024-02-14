@@ -1,8 +1,8 @@
-package com.vasquez.msproduct.service.impl;
+package com.vasquez.msproduct.business.impl;
 
 import com.vasquez.msproduct.entity.Product;
 import com.vasquez.msproduct.repository.ProductRepository;
-import com.vasquez.msproduct.service.ProductService;
+import com.vasquez.msproduct.business.ProductService;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
