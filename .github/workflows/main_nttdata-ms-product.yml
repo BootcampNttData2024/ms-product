@@ -42,7 +42,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v1
         with:
-          images: vasquezdev/ms-client-image
+          images: vasquezdev/ms-product-image
 
       - name: Build and push Docker images
         uses: docker/build-push-action@v1
